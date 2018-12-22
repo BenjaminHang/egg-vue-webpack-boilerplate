@@ -3,10 +3,10 @@ const util = require('util');
 
 module.exports = () => {
   const skipExt = [ '.png', '.jpeg', '.jpg', '.ico', '.gif' ];
-  return function* (next) {
+  return async function (next) {
     const start = new Date().getTime();
 
-    yield* next;
+    await next();
 
     const rs = Math.ceil(new Date().getTime() - start);
 

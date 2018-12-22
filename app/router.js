@@ -5,7 +5,8 @@ module.exports = app => {
   router.get('/client', controller.index.index.client);
   router.get('/list', controller.index.index.list);
   router.get('/category', controller.category.category.index);
-  router.get('/login', controller.admin.admin.login);
+  router.get('/login', controller.admin.admin.loginHtml);
+  router.post('/login', controller.admin.admin.login);
   router.post('/admin/api/article/list', controller.admin.admin.list);
   router.post('/admin/api/article/add', controller.admin.admin.add);
   router.get('/admin/api/article/del/:id', controller.admin.admin.del);
